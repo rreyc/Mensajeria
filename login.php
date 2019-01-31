@@ -1,14 +1,15 @@
 <?php
-if (isset($_GET["login"]) && isset($_GET["password"])){
-    $login=$_GET["login"];
-    $password=$_GET["password"];
-    $mysqli=new mysqli("localhost","root","","mensajeria");
+if (isset($_POST["login"]) && isset($_POST["password"])){
+    $login=$_POST["login"];
+    $password=$_POST["password"];
+    $mysqli=new mysqli("localhost","mensajeria","mensajeria","mensajeria");
     $resultado=$mysqli->query("SELECT * FROM usuarios");
     $fila=$resultado->fetch_assoc();
     while ($fila){
         if ($login==$fila["login"] && $password==$fila["password"]){
             session_start();
             $_SESSION["estado"]=1;
+            $_SESSION["idusu"]=$fila["id"];
             header('location:muro.php');
 
         }else {
@@ -17,13 +18,13 @@ if (isset($_GET["login"]) && isset($_GET["password"])){
         $fila=$resultado->fetch_assoc();
     }
     if ($_SESSION["estado"]!=1){
-        header('location:index.php?error=2');
+        header('location:iniciar.php?error=2');
     }
- 
- 
- 
+
+
+
 }else {
-    header('location:index.php');
+    header('location:iniciar.php');
 }
 
 ?>

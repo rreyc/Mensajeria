@@ -14,25 +14,7 @@
     <h1>Mensajeria</h1>
 </header>
 <div>
-    <form action="login.php" method="get">
-        <label for="login">Usuario</label>
-        <input type="text" name="login" id="login" placeholder="Usuario">
-        <br>
-        <label for="password">Constrseña</label>
-        <input type="password" name="password" id="password" placeholder="Contraseña">
-        <br>
-        <button>Entrar</button>
-    </form>
-    <?php
-    if(isset($_GET["error"])){
-        $error=$_GET["error"];
-        if ($error==2){
-            echo "<p class='error'>Usuario o contraseña incorrecta</p>";
-        }
-    }
-    ?>
-
-    <br>
+    <a href="iniciar.php" id="login">Login</a>
     <a href="registro.php" id="registrar">Registrarse</a>
 </div>
 

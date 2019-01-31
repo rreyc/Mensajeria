@@ -13,22 +13,22 @@
 <h1>Complete sus datos de registro</h1>
 <form action="registrar.php" method="post">
     <label for="nombre">Nombre:    </label>
-    <input type="text" id="nombre" name="nombre" required placeholder="Nombre">
+    <input type="text" id="nombre" name="nombre"  placeholder="Nombre">
     <br>
     <label for="apellido1">Apellido 1:</label>
-    <input type="text" id="apellido1" name="apellido1" required placeholder="Apellido 1">
+    <input type="text" id="apellido1" name="apellido1"  placeholder="Apellido 1">
     <br>
     <label for="apellido2">Apellido 2:</label>
     <input type="text" id="apellido2" name="apellido2" placeholder="Apellido 2(Opcional)">
     <br>
     <label for="login">Login:</label>
-    <input type="text" id="login" name="login" required placeholder="Login">
+    <input type="text" id="login" name="login"  placeholder="Login">
     <br>
     <label for="password">Contraseña:</label>
-    <input type="password" id="password" name="password" required placeholder="Contraseña">
+    <input type="password" id="password" name="password"  placeholder="Contraseña">
     <br>
     <label for="password2">Confirmacion:</label>
-    <input type="password" id="password2" name="password2" required placeholder="Repite la contraseña">
+    <input type="password" id="password2" name="password2"  placeholder="Repite la contraseña">
     <br>
     <button>Enviar</button>
 </form>

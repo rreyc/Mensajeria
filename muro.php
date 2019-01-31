@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,12 +6,36 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
 </head>
 <body>
 <div>
-    <a href="anadir.php">Añadir Mensaje</a>
-    <a href="odificar.php">Añadir Mensaje</a>
-    <a href="eliminar.php">Añadir Mensaje</a>
+    <a href="nuevo.php">Escribir Mensaje</a>
+
+    <?php
+    session_start();
+    if (isset($_SESSION["idusu"])){
+        $idusu=$_SESSION["idusu"];
+        $mysqli=new mysqli("localhost","root","","mensajeria");
+        $resultado=$mysqli->query("SELECT * FROM mensajes WHERE id_usuario=$idusu");
+        $fila= $resultado->fetch_assoc();
+
+        if ($fila==NULL){
+            echo "<p>Todavia no has escrito ningun mensaje</p>";
+        }else {
+            while ($fila){
+                $id_mensaje=$fila["id_mensaje"];
+                echo "<p>{$fila["mensaje"]}</p>";
+                echo "<a href="."modificado.php?id_mensaje={$id_mensaje}".">Modificar</a>";
+               // echo "<a href="."borrar.php?id_mensaje=".">Borrar</a>";
+                $fila=$resultado->fetch_assoc();
+            }
+        }
+    }
+    ?>
+
+</div>
+<div id="zonamensaje">
 
 </div>
 </body>
