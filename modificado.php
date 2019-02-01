@@ -20,7 +20,7 @@ if (isset($_SESSION["idusu"])) {
 </head>
 <body>
 <h2>Modifique su mensaje</h2>
-<form action="modificar.php" method="get">
+<form action="modificar.php" method="post">
     <?php
     if (isset($_GET["id_mensaje"])){
         $id_mensaje=$_GET["id_mensaje"];

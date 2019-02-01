@@ -9,7 +9,7 @@ if (isset($_POST["login"]) && isset($_POST["password"])){
         if ($login==$fila["login"] && $password==$fila["password"]){
             session_start();
             $_SESSION["estado"]=1;
-            $_SESSION["idusu"]=$fila["id"];
+            $_SESSION["id_usuario"]=$fila["id"];
             header('location:muro.php');
 
         }else {

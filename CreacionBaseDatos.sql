@@ -1,5 +1,7 @@
 CREATE DATABASE mensajeria;
+
 CREATE USER mensajerialocalhost IDENTIFIED BY 'mensajeria';
+
 USE mensajeria;
 CREATE TABLE usuarios (
   id INT(3) auto_increment,
@@ -23,7 +25,8 @@ CREATE TABLE mensajes (
   CONSTRAINT id_fk FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
 );
 
-DELETE FROM mensajes WHERE id_mensaje=$id_mensaje;
 
-USE mensajeria;
-UPDATE mensajes SET mensaje='Hola que tal va' WHERE id_mensaje=14;
+
+
+
+

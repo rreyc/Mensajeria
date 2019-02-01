@@ -9,10 +9,10 @@ if (isset($_POST["nombre"]) && isset($_POST["apellido1"]) && isset($_POST["login
     if ($password==$password2){
         $mysqli=new mysqli("localhost","mensajeria","mensajeria","mensajeria");
         $insertar=$mysqli->query("INSERT INTO usuarios VALUES (NULL ,'$nombre','$apellido1','$apellido2','$login','$password')");
-        header('location:muro.php');
         session_start();
         $_SESSION["estado"]=1;
         $_SESSION["idusu"]=$fila["id"];
+        header('location:muro.php');
     }else{
         header('location:registro.php?error=1');
     }

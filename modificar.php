@@ -1,11 +1,11 @@
 <?php
 
-if (isset($_GET["id_mensaje"]) && isset($_GET["mensaje"])){
+if (isset($_POST["id_mensaje"]) && isset($_POST["mensaje"])){
     session_start();
     if (isset($_SESSION["idusu"])){
         $idusu=$_SESSION["idusu"];
-        $id_mensaje=$_GET["id_mensaje"];
-        $mensaje=$_GET["mensaje"];
+        $id_mensaje=$_POST["id_mensaje"];
+        $mensaje=$_POST["mensaje"];
         $mysqli=new mysqli("localhost","root","","mensajeria");
         $resultado=$mysqli->query("UPDATE mensajes SET mensaje='{$mensaje}' WHERE id_mensaje=$id_mensaje");
 header('location:muro.php');

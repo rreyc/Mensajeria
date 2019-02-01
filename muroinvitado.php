@@ -10,8 +10,6 @@
 </head>
 <body>
 <div>
-    <a href="nuevo.php">Escribir Mensaje</a>
-
     <?php
     session_start();
     if (isset($_SESSION["id_usuario"])){
@@ -21,14 +19,13 @@
         $fila= $resultado->fetch_assoc();
 
         if ($fila==NULL){
-            echo "<p>Todavia no has escrito ningun mensaje</p>";
+            echo "<p>Todavia no ha escrito ningun mensaje</p>";
         }else {
             while ($fila){
                 $id_mensaje=$fila["id_mensaje"];
                 echo "<div id=\"zonamensaje\">";
                 echo "<p>{$fila["mensaje"]}</p>";
-                echo "<a href="."modificado.php?id_mensaje={$id_mensaje}>Modificar</a>";
-                echo "<a href="."borrado.php?id_mensaje={$id_mensaje}>Borrar</a>";
+
                 echo "</div>";
                 $fila=$resultado->fetch_assoc();
             }
@@ -42,7 +39,7 @@
 
 </div>
 <div id="buscador">
-    <h3>¿Quieres encontrar a alguien?</h3>
+    <h3>¿Quieres encontrar a otra persona?</h3>
     <form action="buscador.php">
         <button>Buscar</button>
     </form>
