@@ -25,17 +25,20 @@
         }else {
             while ($fila){
                 $id_mensaje=$fila["id_mensaje"];
+                echo "<div id=\"zonamensaje\">";
                 echo "<p>{$fila["mensaje"]}</p>";
-                echo "<a href="."modificado.php?id_mensaje={$id_mensaje}".">Modificar</a>";
-               // echo "<a href="."borrar.php?id_mensaje=".">Borrar</a>";
+                echo "<a href="."modificado.php?id_mensaje={$id_mensaje}>Modificar</a>";
+                echo "<a href="."borrado.php?id_mensaje={$id_mensaje}>Borrar</a>";
+                echo "</div>";
                 $fila=$resultado->fetch_assoc();
             }
         }
+    }else {
+        if ($_SESSION["estado"]!=1){
+            header('location:iniciar.php');
+        }
     }
     ?>
-
-</div>
-<div id="zonamensaje">
 
 </div>
 </body>

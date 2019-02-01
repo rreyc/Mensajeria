@@ -19,11 +19,15 @@ if (isset($_SESSION["idusu"])) {
     <link rel="stylesheet" href="https://cdn.rawgit.com/Chalarangelo/mini.css/v3.0.1/dist/mini-default.min.css">
 </head>
 <body>
-<h2>Inserte el texto que desee añadir</h2>
-<form action="anadir.php" method="post">
-    <textarea name="mensaje" id="mensaje" required placeholder="Escriba aqui" cols="30" rows="10"></textarea>
-    <br>
-    <button>Enviar</button> &nbsp;&nbsp;&nbsp;&nbsp;<a href="muro.php">Volver a tu muro</a>
-</form>
+<h2>¿Seguro que desea borrar el mensaje?</h2>
+
+    <?php
+    if (isset($_GET["id_mensaje"])){
+        $id_mensaje=$_GET["id_mensaje"];
+    }
+    echo "<a href=borrar.php?id_mensaje=$id_mensaje>Confirmar</a> &nbsp;&nbsp;&nbsp;&nbsp;<button href=muro.php>Cancelar</button>";
+    ?>
+
+
 </body>
 </html>

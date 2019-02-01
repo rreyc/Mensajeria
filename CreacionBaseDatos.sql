@@ -11,10 +11,9 @@ CREATE TABLE usuarios (
   CONSTRAINT id_pk PRIMARY KEY (id),
   CONSTRAINT login_uk UNIQUE (login)
   );
+  GRANT ALL ON mensajeria.* TO 'mensajeria'@'localhost';
 
-GRANT CREATE ON usuarios TO 'mensajeria'@'localhost';
-GRANT INSERT ON usuarios TO 'mensajeria'@'localhost';
-GRANT SELECT ON usuarios TO 'mensajeria'@'localhost';
+
 
 CREATE TABLE mensajes (
   id_mensaje INT(5) auto_increment,
@@ -24,3 +23,7 @@ CREATE TABLE mensajes (
   CONSTRAINT id_fk FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
 );
 
+DELETE FROM mensajes WHERE id_mensaje=$id_mensaje;
+
+USE mensajeria;
+UPDATE mensajes SET mensaje='Hola que tal va' WHERE id_mensaje=14;
