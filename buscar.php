@@ -18,7 +18,7 @@ if (isset($_GET["nombre"]) || isset($_GET["apellido"]) || $_GET["login"]){
     $mysqli = new mysqli("localhost", "root", "", "mensajeria");
     $resultado=$mysqli->query("SELECT * FROM usuarios");
     $fila=$resultado->fetch_assoc();
-    
+
     if ($nombre!=$fila["nombre"] || $apellido!=$fila["apellido1"] || $login!=$fila["login"]){
         echo "<p>No hay coincidencias</p>";
         echo "<br>";

@@ -30,5 +30,6 @@
     <br>
     <button>Buscar</button>
 </form>
+<a href="muro.php">Volver al muro</a>
 </body>
 </html>

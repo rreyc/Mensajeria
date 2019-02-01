@@ -25,8 +25,8 @@ CREATE TABLE mensajes (
   CONSTRAINT id_fk FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
 );
 
-
-
-
+SELECT * FROM mensajes WHERE id_usuario=1;
+SELECT * FROM usuarios WHERE id=2;
+SELECT * FROM mensajes m,usuarios u WHERE m.id_usuario=2 AND m.id_usuario=u.id;
 
 

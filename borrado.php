@@ -25,7 +25,7 @@ if (isset($_SESSION["idusu"])) {
     if (isset($_GET["id_mensaje"])){
         $id_mensaje=$_GET["id_mensaje"];
     }
-    echo "<a href=borrar.php?id_mensaje=$id_mensaje>Confirmar</a> &nbsp;&nbsp;&nbsp;&nbsp;<button href=muro.php>Cancelar</button>";
+    echo "<a href=borrar.php?id_mensaje=$id_mensaje>Confirmar</a> &nbsp;&nbsp;&nbsp;&nbsp;<a href=muro.php>Cancelar</a>";
     ?>
 
 

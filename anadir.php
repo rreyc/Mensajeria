@@ -5,7 +5,7 @@ if (isset($_POST["mensaje"])){
         $id_usuario=$_SESSION["id_usuario"];
         $mensaje=$_POST["mensaje"];
         $mysqli=new mysqli("localhost","root","","mensajeria");
-        $resultado=$mysqli->query("INSERT INTO mensajes VALUES (NULL,'$mensaje','$id_usuarioario')");
+        $resultado=$mysqli->query("INSERT INTO mensajes VALUES (NULL,'$mensaje','$id_usuario')");
         header('location:muro.php');
     }
 }else {

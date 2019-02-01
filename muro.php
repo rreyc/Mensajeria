@@ -27,6 +27,7 @@
                 $id_mensaje=$fila["id_mensaje"];
                 echo "<div id=\"zonamensaje\">";
                 echo "<p>{$fila["mensaje"]}</p>";
+                echo "<br>";
                 echo "<a href="."modificado.php?id_mensaje={$id_mensaje}>Modificar</a>";
                 echo "<a href="."borrado.php?id_mensaje={$id_mensaje}>Borrar</a>";
                 echo "</div>";

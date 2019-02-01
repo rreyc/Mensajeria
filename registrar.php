@@ -12,7 +12,7 @@ if (isset($_POST["nombre"]) && isset($_POST["apellido1"]) && isset($_POST["login
         session_start();
         $_SESSION["estado"]=1;
         $_SESSION["idusu"]=$fila["id"];
-        header('location:muro.php');
+        header('location:login.php');
     }else{
         header('location:registro.php?error=1');
     }
